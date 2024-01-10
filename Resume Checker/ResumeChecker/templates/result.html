@@ -7,39 +7,50 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
         }
 
         h1 {
-            color: #2c3e50;
-        }
-
-        p {
-            margin: 10px 0;
+            color: #333;
+            text-align: center;
         }
 
         .result-container {
-            background-color: #ecf0f1;
+            background-color: #fff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        p.error {
+            color: red;
             text-align: center;
+            margin-top: 16px;
         }
     </style>
 </head>
 <body>
+    <h1>Resume Analysis Result</h1>
     <div class="result-container">
-        <h1>Resume Analysis Result</h1>
-        <p>Overall Similarity: <span style="color: #3498db;">{{ overall_similarity }}</span></p>
-        <p>Information Similarity: <span style="color: #2ecc71;">{{ info_similarity }}</span></p>
+        <p>Overall Similarity: {{ overall_similarity }}</p>
+        <p>Additional Analysis: {{ additional_analysis }}</p>
+        <p>Missing Words: {{ missing_words }}</p>
+        <p>Improvement Suggestions: {{ improvement_suggestions }}</p>
     </div>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
 </body>
 </html>
