@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
 
-#Go to this Link in web browser to use/upload your resume --> http://127.0.0.1:5000/
+#Go to this Link in web browser to use/upload your resume --> `http://127.0.0.1:5000/`
 
 # Load spaCy model for natural language processing
 nlp = spacy.load("en_core_web_sm")
