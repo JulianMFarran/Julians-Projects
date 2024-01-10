@@ -6,6 +6,8 @@ import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 from sklearn.metrics.pairwise import cosine_similarity
 
+#http://127.0.0.1:5000/ <- the localhost 
+
 # Initialize Flask app
 app = Flask(__name__)
 
